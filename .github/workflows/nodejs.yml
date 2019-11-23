@@ -3,25 +3,25 @@ name: Node CI
 on: [push]
 
 jobs:
-    build:
-        runs-on: ubuntu-latest
+  build:
+    name: Run Tests
 
-        strategy:
-            matrix:
-                node-version: [8.x, 10.x, 12.x]
+    runs-on: ubuntu-latest
 
-        steps:
-            - uses: actions/checkout@v1
-            - name: Cache
-              uses: actions/cache@v1.0.3
-            - name: Use Node.js ${{ matrix.node-version }}
-              uses: actions/setup-node@v1
-              with:
-                  node-version: ${{ matrix.node-version }}
-            - name: npm install, build, and test
-              run: |
-                  npm ci
-                  npm run lint
-                  npm test
-              env:
-                  CI: true
+    strategy:
+      matrix:
+        node-version: [8.x, 10.x, 12.x]
+
+    steps:
+      - uses: actions/checkout@v1
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node-version }}
+      - name: npm install, lint, and test
+        run: |
+          npm ci
+          npm run lint
+          npm test
+        env:
+          CI: true
