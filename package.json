@@ -4,7 +4,7 @@
 	"description": "Unified Untis Api",
 	"main": "src/index.js",
 	"scripts": {
-		"lint": "npx eslint src/** test/**",
+		"lint": "npx eslint . --ext .js",
 		"test": "mocha"
 	},
 	"repository": {
