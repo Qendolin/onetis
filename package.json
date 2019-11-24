@@ -5,7 +5,7 @@
 	"main": "src/index.js",
 	"scripts": {
 		"lint": "npx eslint . --ext .js",
-		"test": "mocha"
+		"test": "mocha test/**/*"
 	},
 	"repository": {
 		"type": "git",
@@ -14,6 +14,9 @@
 	"keywords": [
 		"Untis"
 	],
+	"engines": {
+		"node": ">=v10.3.0"
+	},
 	"author": "",
 	"license": "ISC",
 	"bugs": {
@@ -22,12 +25,17 @@
 	"homepage": "https://github.com/Qendolin/onetis#readme",
 	"dependencies": {
 		"chai": "^4.2.0",
-		"eslint": "^6.7.0",
 		"fetch-cookie": "^0.7.3",
 		"js-model-mapper": "^1.0.0",
 		"node-fetch": "^2.6.0"
 	},
 	"devDependencies": {
+		"babel-eslint": "^10.0.3",
+		"eslint": "^6.7.0",
+		"eslint-plugin-node": "^10.0.0",
 		"mocha": "^6.2.2"
+	},
+	"_moduleAliases": {
+		"@api": "src"
 	}
 }

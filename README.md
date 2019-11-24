@@ -1,7 +1,2 @@
-# onetis
-
-Unified Untis Api
-
-# Goal
-
-Client makes the requests which get mapped to the models. The models can then be used by other programms.
+This branch aims to showcase the rough structure and concept behind this api.
+Please don't use this code as an example, it is rubbish.

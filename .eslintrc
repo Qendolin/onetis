@@ -1,17 +1,22 @@
 {
 	"env": {
 		"node": true,
-		"mocha": true
+		"mocha": true,
+		"es2020": true
 	},
 	"extends": "eslint:recommended",
 	"globals": {
 		"Atomics": "readonly",
 		"SharedArrayBuffer": "readonly"
 	},
-	"parserOptions": {
-		"ecmaVersion": 2018,
-		"sourceType": "module"
+	"parser": "babel-eslint",
+	"ecmaFeatures": {
+		"classes": true
 	},
+	"parserOptions": {
+		"ecmaVersion": 2020
+	},
+	"plugins": ["node"],
 	"rules": {
 		"indent": [
 			"warn",
@@ -39,6 +44,9 @@
 		"key-spacing": "warn",
 		"prefer-arrow-callback": "warn",
 		"prefer-spread": "warn",
-		"prefer-template": "warn"
+		"prefer-template": "warn",
+		"no-new-require": "error",
+		"node/exports-style": ["error", "module.exports"],
+		"node/prefer-promises/fs": ["warn"]
 	}
 }
