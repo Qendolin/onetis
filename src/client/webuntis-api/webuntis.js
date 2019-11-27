@@ -1,5 +1,5 @@
-const WebUntis={
-    send:(path="",getParams=null)=>{
+class WebUntis extends Client{
+    send(path="",getParams=null){
 
     }
 }
