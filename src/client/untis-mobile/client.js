@@ -1,34 +1,34 @@
-
 const Client = require('../client')
-const otp = require('otplib/authenticator');
+const otp = require('otplib/authenticator')
 const fetch = require('node-fetch')
 
-
+// eslint-disable-next-line no-unused-vars
 class UMClient extends Client {
+	send(method, params) {
+		return this._sendJRPC(method, params)
+	}
 
-    send(method, params) {
-        return this._sendJRPC(method, params)
-    }
-
-    _sendJRPC(method, params) {
-        const url = `${this.server}/WebUntis/jsonrpc_intern.do`
-        return fetch(url, {
-            body: JSON.stringify({
+	_sendJRPC(method, params) {
+		const url = `${this.server}/WebUntis/jsonrpc_intern.do`
+		return fetch(url, {
+			body: JSON.stringify({
 				id: this.jrpcId,
 				method: method,
-				params: [{
-					auth: {
-						clientTime: Date.now(),
-						user: this.user.name,
-						otp: this.currentOtp
-					},
-					...params
-				}]
+				params: [
+					{
+						auth: {
+							clientTime: Date.now(),
+							user: this.user.name,
+							otp: this.currentOtp
+						},
+						...params
+					}
+				]
 			})
-        })
-    }
+		})
+	}
 
-    get currentOtp() {
-        return otp.generate(this.secret);
-    }
+	get currentOtp() {
+		return otp.generate(this.secret)
+	}
 }
