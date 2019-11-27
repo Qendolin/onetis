@@ -16,14 +16,13 @@ class Client {
 
     /**
      * @abstract
-     * @param {*} request 
      */
     send(method, params) {
         throw new NotImplementedError();
     }
 
     get jrpcId() {
-        return `onetis-${Date.now()}`
+        return `onetis-${Date.now()}-${Math.random()*10**6 | 0}`
     }
 
 }
