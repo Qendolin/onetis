@@ -5,6 +5,8 @@ const Subjects = {
 			elementType: 3,
 			date: date
 		}
-		return WebUntis.send(path, getParams)
+		return webuntis.sendsend(path, getParams)
 	}
 }
+
+module.exports = Subjects;

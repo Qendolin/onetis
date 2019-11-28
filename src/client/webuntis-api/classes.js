@@ -5,6 +5,8 @@ const Classes = {
 			elementType: 1,
 			date: date
 		}
-		return WebUntis.send(path, getParams)
+		return webuntis.sendsend(path, getParams)
 	}
 }
+
+module.exports = Classes;

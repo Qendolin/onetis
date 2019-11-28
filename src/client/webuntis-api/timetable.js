@@ -7,6 +7,8 @@ const Timetable = {
 			date: date,
 			formatId: 1
         }
-        return WebUntis.send(path,getParams);
+        return webuntis.sendsend(path,getParams);
 	}
 }
+
+module.exports = Timetable;

@@ -6,6 +6,7 @@ const Students = {
 			date: date,
 			"filter.klasseId": classId 
 		}
-		return WebUntis.send(path, getParams)
+		return webuntis.sendsend(path, getParams)
 	}
 }
+module.exports = Students;

@@ -1,6 +1,8 @@
-const Classes = {
+const ClassNames = {
 	get: () => {
 		let path = 'api/public/officehours/classes'
-		return WebUntis.send(path)
+		return webuntis.sendsend(path)
 	}
 }
+
+module.exports = ClassNames;

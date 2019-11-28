@@ -6,6 +6,8 @@ const Rooms = {
 			date: date,
 			'filter.buildingId': buildingId
 		}
-		return WebUntis.send(path, getParams)
+		return webuntis.sendsend(path, getParams)
 	}
 }
+
+module.exports = Rooms;
