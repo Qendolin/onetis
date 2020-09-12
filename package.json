@@ -26,7 +26,7 @@
 	"dependencies": {
 		"fetch-cookie": "^0.7.3",
 		"js-model-mapper": "^1.0.0",
-		"node-fetch": "^2.6.0"
+		"node-fetch": "^2.6.1"
 	},
 	"devDependencies": {
 		"babel-eslint": "^10.0.3",
